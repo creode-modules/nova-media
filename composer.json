@@ -7,6 +7,12 @@
             "email": "contact@creode.co.uk"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [
@@ -29,5 +35,8 @@
         "psr-4": {
             "Modules\\NovaMedia\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "laravel/nova": "^4.0"
     }
 }
