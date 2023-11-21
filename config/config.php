@@ -12,5 +12,5 @@ return [
     | be any disk that you have configured in your filesystems.php config file.
     |
     */
-    'disk' => env('MEDIA_DISK', 'public'),
+    'disk' => env('NOVA_MEDIA_DISK', 'public'),
 ];
