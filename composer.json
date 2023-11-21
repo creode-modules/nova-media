@@ -1,0 +1,33 @@
+{
+    "name": "creode/nova-media",
+    "description": "",
+    "authors": [
+        {
+            "name": "Creode",
+            "email": "contact@creode.co.uk"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\NovaMedia\\app\\Providers\\NovaMediaServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\NovaMedia\\": "",
+            "Modules\\NovaMedia\\App\\": "app/",
+            "Modules\\NovaMedia\\Database\\Factories\\": "database/factories/",
+            "Modules\\NovaMedia\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\NovaMedia\\Tests\\": "tests/"
+        }
+    }
+}

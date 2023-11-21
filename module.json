@@ -1,0 +1,11 @@
+{
+    "name": "NovaMedia",
+    "alias": "novamedia",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\NovaMedia\\app\\Providers\\NovaMediaServiceProvider"
+    ],
+    "files": []
+}
