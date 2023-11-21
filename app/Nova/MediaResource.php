@@ -4,8 +4,8 @@ namespace Modules\NovaMedia\app\Nova;
 
 use Laravel\Nova\Resource;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class MediaResource extends Resource
@@ -44,7 +44,7 @@ class MediaResource extends Resource
     {
         return [
             ID::make()->sortable(),
-            Image::make('File', 'location')
+            File::make('File', 'location')
                 ->disk(config('media.disk'))
                 ->required(),
             Text::make('Alt Text', 'alt_text')
