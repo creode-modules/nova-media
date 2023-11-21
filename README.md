@@ -5,6 +5,9 @@ Simple Nova resource which will work like a media library, allowing you to store
 You can install this package with the following command:
 `composer require creode/nova-media`
 
+You also need to run the migrations which will create a new media table:
+`php artisan migrate`
+
 ## Usage
 Render the field by id within blade:
 ```
