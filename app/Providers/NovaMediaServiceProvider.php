@@ -64,6 +64,9 @@ class NovaMediaServiceProvider extends ServiceProvider
         Blade::directive('mediaImage', function ($media_id) {
             // Find media by id
             $media = \Modules\NovaMedia\app\Models\Media::find($media_id);
+            if (!$media) {
+                return "";
+            }
 
             // Return image tag with alt_text and url
             return "<img src='{$media->url}' alt='{$media->alt_text}' />";
