@@ -2,8 +2,8 @@
 
 namespace Modules\NovaMedia\app\Providers;
 
+use \Illuminate\Support\Facades\Config;
 use Laravel\Nova\Nova;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class NovaMediaServiceProvider extends ServiceProvider
@@ -20,7 +20,7 @@ class NovaMediaServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected string $moduleNameLower = 'novamedia';
+    protected string $moduleNameLower = 'nova-media';
 
     /**
      * Boot the application events.
@@ -33,8 +33,8 @@ class NovaMediaServiceProvider extends ServiceProvider
         // Register config.
         $this->publishes([__DIR__ . '/../../config/config.php' => config_path('nova-media'.'.php')], 'nova-media-config');
 
-        // Register blade directives
-        $this->registerBladeDirectives();
+        // Register views.
+        $this->registerViews();
     }
 
     /**
@@ -57,19 +57,21 @@ class NovaMediaServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register blade directives.
+     * Register views.
+     *
+     * @return void
      */
-    private function registerBladeDirectives(): void
+    public function registerViews()
     {
-        Blade::directive('mediaImage', function ($media_id) {
-            // Find media by id
-            $media = \Modules\NovaMedia\app\Models\Media::find($media_id);
-            if (!$media) {
-                return "";
-            }
+        // Path where views are stored in this package.
+        $packageViewBasePath = __DIR__.'/../../resources/views';
 
-            // Return image tag with alt_text and url
-            return "<img src='{$media->url}' alt='{$media->alt_text}' />";
-        });
+        // Loads in the views from this package so they can be overwritten by the application.
+        $this->loadViewsFrom($packageViewBasePath, $this->moduleNameLower);
+
+        // Publishes views to the application so they can be modified.
+        $this->publishes([
+            $packageViewBasePath => resource_path("views/vendor/$this->moduleNameLower"),
+        ], ['views', $this->moduleNameLower . '-views']);
     }
 }
