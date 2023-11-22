@@ -14,6 +14,14 @@ Render the field by id within blade:
 @mediaImage($mediaId)
 ```
 
+### Media Field
+You can also use the media field within your Nova resource:
+```php
+MediaField::make('Media')
+```
+
+This will automatically create a select box which will allow you to select a media item.
+
 ## Configuration
 You can configure which filesystem disk to use for the media library by publishing the config file:
 
