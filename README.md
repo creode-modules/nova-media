@@ -33,7 +33,7 @@ You can configure which filesystem disk to use for the media library by publishi
 php artisan vendor:publish --tag="nova-media-config"
 ```
 
-And overwriting the disk parameter, alternative you can set the `NOVA_MEDIA_DISK` environment variable.
+And overwriting the disk parameter, alternatively you can set the `NOVA_MEDIA_DISK` environment variable.
 
 ## Publishing Views
 You can publish the views for this package by running the following command:
