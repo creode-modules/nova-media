@@ -15,7 +15,7 @@ php artisan migrate
 ## Usage
 Render the field by id within blade:
 ```
-@include(nova-media::image, ['id' => $imageId])
+@include('nova-media::image', ['id' => $imageId])
 ```
 
 ### Media Field
