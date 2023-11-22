@@ -35,10 +35,10 @@ php artisan vendor:publish --tag="nova-media-config"
 
 And overwriting the disk parameter, alternative you can set the `NOVA_MEDIA_DISK` environment variable.
 
-## Publishing Views
+## Publishing Views
 You can publish the views for this package by running the following command:
 ```bash
 php artisan vendor:publish --tag="nova-media-views"
 ```
 
-This will add a new view into the resources/views/vendor/nova-media directory which you can edit to change the way the media is displayed.
+This will add a new view into the `resources/views/vendor/nova-media` directory which you can edit to change the way the media is displayed.
