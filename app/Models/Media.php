@@ -52,4 +52,14 @@ class Media extends Model
                 ->url($attributes['location']),
         );
     }
+
+    /**
+     * Determines if the current media item is an image.
+     *
+     * @return boolean
+     */
+    public function isImage(): bool
+    {
+        return in_array($this->mime_type, config('nova-media.image_mime_types'));
+    }
 }

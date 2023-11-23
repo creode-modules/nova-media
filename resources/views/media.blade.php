@@ -4,6 +4,6 @@
     $media = $mediaService->getMediaItemById($id);
 @endphp
 
-@if ($media)
-    <img src="{{ $media->url }}" alt="{{ $media->alt_text }}" class="media-image">
+@if ($media && $media->isImage())
+    @include('nova-media::partials.image', ['media' => $media])
 @endif
