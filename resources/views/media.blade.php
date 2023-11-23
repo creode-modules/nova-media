@@ -4,6 +4,6 @@
     $media = $mediaService->getMediaItemById($id);
 @endphp
 
-@if ($media->isImage())
+@if ($media && $media->isImage())
     @include('nova-media::partials.image', ['media' => $media])
 @endif
