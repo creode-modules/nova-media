@@ -28,5 +28,6 @@ return [
         'image/png',
         'image/gif',
         'image/svg+xml',
+        'image/webp',
     ],
 ];
