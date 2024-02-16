@@ -30,4 +30,15 @@ return [
         'image/svg+xml',
         'image/webp',
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Traffic Cop
+    |--------------------------------------------------------------------------
+    |
+    | Indicates whether Nova should check for modifications between viewing
+    | and updating a resource.
+    |
+    */
+    'traffic_cop' => true,
 ];
