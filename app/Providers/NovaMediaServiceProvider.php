@@ -5,6 +5,7 @@ namespace Modules\NovaMedia\app\Providers;
 use \Illuminate\Support\Facades\Config;
 use Laravel\Nova\Nova;
 use Illuminate\Support\ServiceProvider;
+use Modules\NovaMedia\app\Nova\MediaResource;
 
 class NovaMediaServiceProvider extends ServiceProvider
 {
@@ -45,6 +46,7 @@ class NovaMediaServiceProvider extends ServiceProvider
         // Bind default values into config.
         $this->mergeConfigFrom(__DIR__ . '/../../config/config.php', 'nova-media');
 
+        MediaResource::$trafficCop = config('nova-media.traffic_cop');
         Nova::resources([\Modules\NovaMedia\app\Nova\MediaResource::class]);
     }
 
