@@ -1,3 +1,3 @@
 @if ($media)
-    <img src="{{ $media->url }}" alt="{{ $media->alt_text }}" class="media-image">
+    <img @if ($role) role="{{ $role }}" @endif src="{{ $media->url }}" alt="{{ $media->alt_text }}" class="media-image">
 @endif
